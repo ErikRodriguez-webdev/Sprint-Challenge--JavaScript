@@ -126,11 +126,14 @@ const graduates = [
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
 
-for (let i = 0; i < graduates.length; i++) {
-  universities.push(graduates[i].university);
+function getUni() {
+  for (let i = 0; i < graduates.length; i++) {
+    universities.push(graduates[i].university);
+  }
+  universities.sort();
 }
 
-universities.sort();
+getUni();
 
 console.log(universities);
 
@@ -142,17 +145,27 @@ The resulting contact information strings should have a space between the first 
 Log the result of your new array. */
 const contactInfo = [];
 
-for (let i = 0; i < graduates.length; i++) {
-  contactInfo.push(graduates[i].first_name);
-  contactInfo.push(graduates[i].email);
+function getNameEmail() {
+  for (let i = 0; i < graduates.length; i++) {
+    contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`);
+  }
 }
 
-contactInfo;
+getNameEmail();
 
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
+
+function nameFinder(array, word) {
+  return array.filter(function(name) {
+    name.university === word;
+  });
+}
+
+nameFinder(graduates, "uni");
+
 console.log(unisWithUni);
 
 // ==== ADVANCED Array Methods ====
@@ -228,7 +241,18 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
+
+function get2Names() {
+  zooAnimals.forEach(function() {
+    displayNames.push(
+      `Name: ${zooAnimals.animal_name} Scientific:${zooAnimals.scientific_name}`
+    );
+  });
+}
+
 console.log(displayNames);
+
+//`Name: ${zooAnimals.animal_name} Scientific:${zooAnimals.scientific_name}`
 
 /* Request 2: .map()
 
