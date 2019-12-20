@@ -43,11 +43,7 @@ class ACuboidMaker {
   }
 }
 
-const theCuboid2 = new ACuboidMaker({
-  length: 4,
-  width: 5,
-  height: 5
-});
+const theCuboid2 = new ACuboidMaker(4, 5, 5);
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 console.log(theCuboid2.volume()); // 100
